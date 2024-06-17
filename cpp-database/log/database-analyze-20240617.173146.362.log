@@ -1,0 +1,25 @@
+[2024-06-17 17:31:46] This is codeql database analyze cpp-database codeql/cpp-queries:codeql-suites/cpp-code-scanning.qls --format=sarifv2.1.0 --output=cpp-results.sarif --download
+[2024-06-17 17:31:46] Log file was started late.
+[2024-06-17 17:31:46] [DETAILS] database analyze> Downloading queries...
+[2024-06-17 17:31:46] Running plumbing command: codeql pack download --format json --qlconfig-file=/home/vegas/SAST/qlconfig.yml -- codeql/cpp-queries:codeql-suites/cpp-code-scanning.qls
+[2024-06-17 17:31:46] [PROGRESS] pack download> Package specifications to check for download: codeql/cpp-queries:codeql-suites/cpp-code-scanning.qls
+[2024-06-17 17:31:46] Calling plumbing command: codeql resolve queries --qlconfig-file=/home/vegas/SAST/qlconfig.yml --format installedpacks codeql/cpp-queries:codeql-suites/cpp-code-scanning.qls
+[2024-06-17 17:31:46] [PROGRESS] resolve queries> Recording pack reference codeql/cpp-queries at /home/vegas/codeql-bundle-linux64/codeql/qlpacks/codeql/cpp-queries/1.0.1.
+[2024-06-17 17:31:46] Plumbing command codeql resolve queries completed:
+                      {
+                        "installedPacks" : [ ]
+                      }
+[2024-06-17 17:31:46] [PROGRESS] pack download> Did not need to download any packs.
+[2024-06-17 17:31:46] Plumbing command codeql pack download completed.
+[2024-06-17 17:31:46] [PROGRESS] database analyze> Running queries.
+[2024-06-17 17:31:46] Running plumbing command: codeql database run-queries --evaluator-log-level=5 --warnings=show --qlconfig-file=/home/vegas/SAST/qlconfig.yml --no-rerun --interpret-passthrough=null,--format=sarifv2.1.0,-o=/home/vegas/SAST/cpp-results.sarif,--max-paths=4,--csv-location-format=line-column,--print-diagnostics-summary,--print-metrics-summary,--qlconfig-file=/home/vegas/SAST/qlconfig.yml,--,/home/vegas/SAST/cpp-database,codeql/cpp-queries:codeql-suites/cpp-code-scanning.qls -- /home/vegas/SAST/cpp-database codeql/cpp-queries:codeql-suites/cpp-code-scanning.qls
+[2024-06-17 17:31:46] Calling plumbing command: codeql resolve ram --dataset=/home/vegas/SAST/cpp-database/db-cpp --format=json
+[2024-06-17 17:31:46] [PROGRESS] resolve ram> Stringpool size measured as 2523546
+[2024-06-17 17:31:46] Plumbing command codeql resolve ram completed:
+                      [
+                        "-J-Xmx3242M",
+                        "--off-heap-ram=4034"
+                      ]
+[2024-06-17 17:31:46] Chaining via /tmp/codeql.Crfaa2rI to plumbing: execute queries -J-Xmx3242M --off-heap-ram=4034 --verbosity=progress --logdir=/home/vegas/SAST/cpp-database/log --evaluator-log-level=5 --warnings=show --qlconfig-file=/home/vegas/SAST/qlconfig.yml --no-rerun --interpret-passthrough=null,--format=sarifv2.1.0,-o=/home/vegas/SAST/cpp-results.sarif,--max-paths=4,--csv-location-format=line-column,--print-diagnostics-summary,--print-metrics-summary,--qlconfig-file=/home/vegas/SAST/qlconfig.yml,--,/home/vegas/SAST/cpp-database,codeql/cpp-queries:codeql-suites/cpp-code-scanning.qls --output=/home/vegas/SAST/cpp-database/results -- /home/vegas/SAST/cpp-database/db-cpp codeql/cpp-queries:codeql-suites/cpp-code-scanning.qls
+[2024-06-17 17:31:46] Plumbing command codeql database run-queries completed with status 70.
+[2024-06-17 17:31:46] Exiting with code 70
