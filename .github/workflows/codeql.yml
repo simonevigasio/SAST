@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [ 'cpp', 'java', 'javascript', 'python' ]  # Add the languages relevant to your project
+        language: [ 'cpp' ] 
 
     steps:
     - name: Checkout repository
@@ -28,7 +28,7 @@ jobs:
         languages: ${{ matrix.language }}
 
     - name: Build the code
-      run: make   # Adjust this if you need a specific target or build directory
+      run: make   
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
