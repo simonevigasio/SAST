@@ -1,9 +1,7 @@
-FILE *fopen_if_not_exists(const char *file) {
-  if (access(file, F_OK) == -1 && errno == ENOENT) {
-    FILE *f = fopen(file, "w"); // Noncompliant
+int valid(pam_handle_t *pamh) {
+    if (pam_authenticate(pamh, PAM_DISALLOW_NULL_AUTHTOK) != PAM_SUCCESS) { // Noncompliant
+        return -1;
+    }
 
-    return f;
-  }
-
-  return nullptr;
+    return 0;
 }
