@@ -1,7 +1,0 @@
-[
-	{
-		"directory": "/home/vegas/SAST",
-		"command": "/usr/bin/g++ -o main main.cpp",
-		"file": "main.cpp"
-	}
-]
