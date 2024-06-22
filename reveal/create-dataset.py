@@ -1,8 +1,6 @@
 import pandas as pd
 
-
 db = pd.read_pickle('reveal_test.pkl')
-
 quarter_dblen = len(db['functionSource']) / 4
 
 i = 0
