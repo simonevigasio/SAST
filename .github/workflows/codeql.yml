@@ -26,7 +26,6 @@ jobs:
     - name: Build the code
       run: |
         make
-        g++ -c -o exe-0 ./reveal/data/0-568/0.cpp 
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
