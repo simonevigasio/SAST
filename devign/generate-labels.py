@@ -2,7 +2,7 @@ import pandas as pd
 
 test_index = set()
 
-with open('./test.txt') as f:
+with open('./utils/test.txt') as f:
     for line in f:
         line=line.strip()
         test_index.add(int(line))

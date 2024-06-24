@@ -1,8 +1,8 @@
 import pandas as pd
 
-db = pd.read_pickle('reveal_test.pkl')
+db = pd.read_pickle('../assets/reveal_test.pkl')
 
-f = open('flawfinder.txt', 'r')
+f = open('output.txt', 'r')
 
 func_idxs = []
 results = [0] * len(db)
@@ -33,7 +33,7 @@ for idx in func_idxs:
     results[idx] = 1
 
 for r in results:
-    f_r = open('flawfinder-results.txt', 'a')
+    f_r = open('preds.txt', 'a')
     f_r.write(str(r)+'\n')
 
 f_r.close()

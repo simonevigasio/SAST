@@ -1,6 +1,6 @@
 import pandas as pd
 
-db = pd.read_pickle('reveal_test.pkl')
+db = pd.read_pickle('./assets/reveal_test.pkl')
 
 for l in db['label']:
     file = open('labels', 'a')

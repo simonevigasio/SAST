@@ -2,12 +2,12 @@ import pandas as pd
 
 test_index = set()
 
-with open('../test.txt') as f:
+with open('../assets/test.txt') as f:
     for line in f:
         line=line.strip()
         test_index.add(int(line))
 
-mydata = pd.read_json('../Devign.json')
+mydata = pd.read_json('../assets/Devign.json')
 db = mydata.iloc[list(test_index)]
 
 f = open('output.txt', 'r')
