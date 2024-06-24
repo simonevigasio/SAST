@@ -25,12 +25,12 @@ for l in f:
                 idx = l[11:13]
             else: 
                 idx = l[11:14]
-        elif l[7].startswith('1'):
+        elif l[9].startswith('1'):
             if l[17].startswith('.'): 
                 idx = l[14:17]
             else: 
                 idx = l[14:18]
-        elif l[7].startswith('-'):
+        elif l[9].startswith('-'):
             idx = l[15:19]
         idx = int(idx)
         if idx not in func_idxs: 

@@ -5827,7 +5827,7 @@ data/684-1365/990.c:2081:  [1] (buffer) strlen:
 ANALYSIS SUMMARY:
 
 Hits = 821
-Lines analyzed = 306621 in approximately 0.86 seconds (358151 lines/second)
+Lines analyzed = 306621 in approximately 0.85 seconds (362297 lines/second)
 Physical Source Lines of Code (SLOC) = 133285
 Hits@level = [0] 932 [1] 184 [2] 555 [3]  13 [4]  60 [5]   9
 Hits@level+ = [0+] 1753 [1+] 821 [2+] 637 [3+]  82 [4+]  69 [5+]   9
