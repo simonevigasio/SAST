@@ -1,0 +1,13 @@
+[
+    {
+        "arguments": [
+            "g++",
+            "-c",
+            "-o",
+            "exe-0",
+            "0.cpp"
+        ],
+        "directory": "/home/vegas/SAST/reveal/data/0-568",
+        "file": "0.cpp"
+    }
+]

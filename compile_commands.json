@@ -1,0 +1,13 @@
+[
+    {
+        "arguments": [
+            "g++",
+            "-c",
+            "-o",
+            "main",
+            "main.cpp"
+        ],
+        "directory": "/home/vegas/SAST",
+        "file": "main.cpp"
+    }
+]
