@@ -2,6 +2,9 @@ import pandas as pd
 import json
 
 db = pd.read_pickle('../assets/reveal_test.pkl')
+
+print('dataset loaded...')
+
 out = open('output.txt', 'r')
 
 rule_types = []
@@ -57,6 +60,8 @@ for line in out:
 out.close()
 rule_types.sort()
 
+print('output read...')
+
 with open('stats.json', 'w') as f:
     json.dump(files, f)
 
@@ -85,6 +90,9 @@ for file in files:
         idx_files.append(idx_file)
 
 idx_files.sort()
+
+print('vulnerable files found...')
+
 results = [0]*len(db)
 
 for idx in idx_files:
@@ -113,6 +121,7 @@ Precision = TP / (TP + FP)
 Recall = TP / (TP + FN)
 F1 = TP / (TP + ((FN + FP) / 2))
 
+print('computed evaluation...')
 print('TP', TP)
 print('TN', TN)
 print('FP', FP)

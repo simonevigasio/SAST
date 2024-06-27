@@ -1,22 +1,19 @@
-import pandas as pd
 import json
+import sys  
+sys.path.append('../assets')
 
-idx = set()
-with open('../assets/test.txt') as f:
-    for line in f:
-        line = line.strip()
-        idx.add(int(line))
+from database import db
 
-data = pd.read_json('../assets/Devign.json')
-db = data.iloc[list(idx)]
-out = open('output.txt', 'r')
+print('dataset loaded...')
 
 rule_types = []
 files = []
 
+out = open('output.txt', 'r')
+
 for line in out:    
 
-    if line[:6].startswith('devign'):
+    if line[:5].startswith('data'):
 
         file = { 'name': '', 'rules': [] }
 
@@ -64,6 +61,8 @@ for line in out:
 out.close()
 rule_types.sort()
 
+print('output read...')
+
 with open('stats.json', 'w') as f:
     json.dump(files, f)
 
@@ -92,6 +91,9 @@ for file in files:
         idx_files.append(idx_file)
 
 idx_files.sort()
+
+print('vulnerable files found...')
+
 results = [0]*len(db)
 
 for idx in idx_files:
@@ -120,6 +122,7 @@ Precision = TP / (TP + FP)
 Recall = TP / (TP + FN)
 F1 = TP / (TP + ((FN + FP) / 2))
 
+print('computed evaluation...')
 print('TP', TP)
 print('TN', TN)
 print('FP', FP)

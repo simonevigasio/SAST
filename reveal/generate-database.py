@@ -11,7 +11,7 @@ if not os.path.exists(newpath):
 
 idx = 0
 for func in db['functionSource']: 
-    file = open('./data/'+str(idx)+'.c', 'w')
+    file = open('./data/'+str(idx)+'.cpp', 'w')
     file.write(func)
     file.close()
     idx += 1
