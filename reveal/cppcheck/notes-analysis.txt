@@ -2,11 +2,9 @@
 RULE                                    CWE                                                                                                                                     TYPE                
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [unusedFunction]                        CWE-561: Dead Code (https://cwe.mitre.org/data/definitions/561.html)                                                                    style               
-[syntaxError]                           -                                                                                                                                       error               
+[syntaxError]                           -                                                                                                                                       error    
+[unknownMacro]                          -                                                                                                                                       error         
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-[arrayIndexOutOfBounds]                 CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer (https://cwe.mitre.org/data/definitions/119.html)      error
-[oppositeExpression]                    CWE CATEGORY: 7PK - Code Quality (https://cwe.mitre.org/data/definitions/398.html)                                                      style
-[ConfigurationNotChecked]               -                                                                                                                                       information
 [shiftNegativeLHS]                      CWE-758: Reliance on Undefined, Unspecified, or Implementation-Defined Behavior (https://cwe.mitre.org/data/definitions/758.html)       portability
 [nullPointerRedundantCheck]             CWE-476: NULL Pointer Dereference (https://cwe.mitre.org/data/definitions/476.html)                                                     warning
 [invalidPrintfArgType_sint]             CWE-686: Function Call With Incorrect Argument Type (https://cwe.mitre.org/data/definitions/686.html)                                   portability
@@ -15,38 +13,29 @@ RULE                                    CWE                                     
 [clarifyCalculation]                    CWE-783: Operator Precedence Logic Error (https://cwe.mitre.org/data/definitions/783.html)                                              style
 [preprocessorErrorDirective]            -                                                                                                                                       error
 [noValidConfiguration]                  -                                                                                                                                       error
-[arithOperationsOnVoidPointer]          CWE-467: Use of sizeof() on a Pointer Type (https://cwe.mitre.org/data/definitions/467.html)                                            portability
 [unassignedVariable]                    CWE-665: Improper Initialization (https://cwe.mitre.org/data/definitions/665.html)                                                      style
-[unsignedLessThanZero]                  CWE-570: Expression is Always False (https://cwe.mitre.org/data/definitions/570.html)                                                   style
 [uselessAssignmentArg]                  CWE CATEGORY: 7PK - Code Quality (https://cwe.mitre.org/data/definitions/398.html)                                                      style
 [shadowArgument]                        CWE-840: Business Logic Errors (https://cwe.mitre.org/data/definitions/840.html)                                                        style
-[invalidScanfArgType_int]               CWE-686: Function Call With Incorrect Argument Type (https://cwe.mitre.org/data/definitions/686.html)                                   warning
 [internalAstError]                      -                                                                                                                                       error
-[duplicateExpression]                   CWE CATEGORY: 7PK - Code Quality (https://cwe.mitre.org/data/definitions/398.html)                                                      style
-[AssignmentIntegerToAddress]            CWE-758: Reliance on Undefined, Unspecified, or Implementation-Defined Behavior (https://cwe.mitre.org/data/definitions/758.html)       portability
-[unknownEvaluationOrder]                CWE-768: Incorrect Short Circuit Evaluation (https://cwe.mitre.org/data/definitions/768.html)                                           error
 [shiftTooManyBitsSigned]                CWE-758: Reliance on Undefined, Unspecified, or Implementation-Defined Behavior (https://cwe.mitre.org/data/definitions/758.html)       portability
 [unusedLabel]                           CWE CATEGORY: 7PK - Code Quality (https://cwe.mitre.org/data/definitions/398.html)                                                      style
-[incorrectStringBooleanError]           CWE-571: Expression is Always True (https://cwe.mitre.org/data/definitions/571.html)                                                    warning
-[unusedStructMember]                    CWE-563: Assignment to Variable without Use (https://cwe.mitre.org/data/definitions/563.html)                                           style
-[comparisonError]                       CWE CATEGORY: 7PK - Code Quality (https://cwe.mitre.org/data/definitions/398.html)                                                      style
-[shadowVariable]                        CWE-710: Improper Adherence to Coding Standards (https://cwe.mitre.org/data/definitions/710.html)                                       style
 [variableScope]                         CWE CATEGORY: 7PK - Code Quality (https://cwe.mitre.org/data/definitions/398.html)                                                      style
-[clarifyCondition]                      CWE CATEGORY: 7PK - Code Quality (https://cwe.mitre.org/data/definitions/398.html)                                                      style
-[toomanyconfigs]                        CWE CATEGORY: 7PK - Code Quality (https://cwe.mitre.org/data/definitions/398.html)                                                      information
 [redundantAssignment]                   CWE-563: Assignment to Variable without Use (https://cwe.mitre.org/data/definitions/563.html)                                           style
 [duplicateCondition]                    CWE CATEGORY: 7PK - Code Quality (https://cwe.mitre.org/data/definitions/398.html)                                                      style
-[identicalConditionAfterEarlyExit]      CWE CATEGORY: 7PK - Code Quality (https://cwe.mitre.org/data/definitions/398.html)                                                      warning
 [autoVariables]                         CWE-562: Return of Stack Variable Address (https://cwe.mitre.org/data/definitions/562.html)                                             error
-[negativeIndex]                         CWE-786: Access of Memory Location Before Start of Buffer (https://cwe.mitre.org/data/definitions/562.html)                             warning
-[selfAssignment]                        CWE CATEGORY: 7PK - Code Quality (https://cwe.mitre.org/data/definitions/398.html)                                                      warning
-[invalidPointerCast]                    CWE-704: Incorrect Type Conversion or Cast (https://cwe.mitre.org/data/definitions/704.html)                                            portability
-[redundantInitialization]               CWE CATEGORY: 7PK - Code Quality (https://cwe.mitre.org/data/definitions/398.html)                                                      style
-[nullPointerArithmeticRedundantCheck]   CWE CATEGORY: 7PK - Code Quality (https://cwe.mitre.org/data/definitions/398.html)                                                      warning
 [constArgument]                         CWE CATEGORY: 7PK - Code Quality (https://cwe.mitre.org/data/definitions/398.html)                                                      style
-[duplicateExpressionTernary]            CWE CATEGORY: 7PK - Code Quality (https://cwe.mitre.org/data/definitions/398.html)                                                      style
 [unreadVariable]                        CWE CATEGORY: 7PK - Code Quality (https://cwe.mitre.org/data/definitions/398.html)                                                      style
-[unpreciseMathCall]                     CWE CATEGORY: 7PK - Code Quality (https://cwe.mitre.org/data/definitions/398.html)                                                      style
-[unsignedPositive]                      CWE-570: Expression is Always False (https://cwe.mitre.org/data/definitions/570.html)                                                   style
 [allocaCalled]                          CWE CATEGORY: 7PK - Code Quality (https://cwe.mitre.org/data/definitions/398.html)                                                      warning
+[compareBoolExpressionWithInt]          CWE CATEGORY: 7PK - Code Quality (https://cwe.mitre.org/data/definitions/398.html)                                                      warning
+[assignmentInAssert]                    CWE CATEGORY: 7PK - Code Quality (https://cwe.mitre.org/data/definitions/398.html)                                                      warning
+[integerOverflow]                       CWE-190: Integer Overflow or Wraparound (https://cwe.mitre.org/data/definitions/190.html)                                               error
+[invalidTestForOverflow]                CWE-570: Expression is Always False (https://cwe.mitre.org/data/definitions/570.html)                                                   warning
+[invalidscanf]                          CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer (https://cwe.mitre.org/data/definitions/119.html)      warning
+[knownConditionTrueFalse]               CWE-570: Expression is Always False (https://cwe.mitre.org/data/definitions/570.html)                                                   style
+[memleak]                               CWE-401: Missing Release of Memory after Effective Lifetime (https://cwe.mitre.org/data/definitions/401.html)                           error
+[oppositeInnerCondition]                CWE CATEGORY: 7PK - Code Quality (https://cwe.mitre.org/data/definitions/398.html)                                                      warning
+[redundantCondition]                    CWE CATEGORY: 7PK - Code Quality (https://cwe.mitre.org/data/definitions/398.html)                                                      style
+[resourceLeak]                          CWE-775: Missing Release of File Descriptor or Handle after Effective Lifetime (https://cwe.mitre.org/data/definitions/775.html)        error
+[unreachableCode]                       CWE CATEGORY: 7PK - Code Quality (https://cwe.mitre.org/data/definitions/398.html)                                                      style
+[uselessAssignmentPtrArg]               CWE CATEGORY: 7PK - Code Quality (https://cwe.mitre.org/data/definitions/398.html)                                                      warning
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
