@@ -1,71 +1,107 @@
+import json
 import pandas as pd
 
 db = pd.read_pickle('../assets/reveal_test.pkl')
 
-f = open('output.txt', 'r')
+print('dataset loaded...')
 
-func_idxs = []
-results = [0] * len(db)
+out = open('output.txt', 'r')
 
-for l in f:
-    if l[:4].startswith('data'): 
-        idx = -1
-        if l[7].startswith('5'):
-            if l[12].startswith('.'):
-                idx = l[11:12]
-            elif l[13].startswith('.'): 
-                idx = l[11:13]
-            else: 
-                idx = l[11:14]
-        elif l[7].startswith('9'):
-            if l[17].startswith('.'): 
-                idx = l[14:17]
-            else: 
-                idx = l[14:18]
-        elif l[7].startswith('3') or l[7].startswith('0'): 
-            idx = l[15:19]
-        idx = int(idx)
-        if idx not in func_idxs: 
-            func_idxs.append(idx)
+stats = []
+prev_stat = { 'name': '', 'CWEs': [] }
+scan_prompt = False
+cwe = ''
 
-func_idxs.sort()
-for idx in func_idxs: 
+for line in out: 
+
+    if line.startswith('ANALYSIS SUMMARY:'): scan_prompt = False
+
+    if scan_prompt:
+
+        if line[0] == '.':
+
+            stat = { 'name': '', 'CWEs': [] }
+
+            i = 0
+            while (line[i] != '.' or line[i+1] != 'c'):
+                stat['name'] += line[i]
+                i += 1                
+
+            if (stat['name'] != '') and (stat['name'] not in [s['name'] for s in stats]):
+                stats.append(stat)
+
+            if (cwe != '') and (prev_stat['name'] != ''): 
+                [s['CWEs'] for s in stats if s['name'] == prev_stat['name']][0].append(cwe)
+
+            stat = [s for s in stats if s['name'] == stat['name']][0]
+            prev_stat = stat
+            cwe = ''
+
+        elif prev_stat['name'] != '': 
+            cwe += line
+
+    if line.startswith('FINAL RESULTS:'): scan_prompt = True
+
+out.close()
+
+print('output read...')
+
+with open('stats.json', 'w') as f:
+    json.dump(stats, f)
+
+idx_files = []
+
+for stat in stats:
+
+    stat['name'] = stat['name'][::-1]
+    idx_file = ''
+
+    i = 0
+    while stat['name'][i] != '/':
+        idx_file += stat['name'][i]
+        i += 1
+
+    idx_file = idx_file[::-1]
+    idx_files.append(int(idx_file))
+
+idx_files.sort()
+
+print('vulnerable files found...')
+
+results = [0]*len(db)
+
+for idx in idx_files:
     results[idx] = 1
 
-for r in results:
-    f_r = open('preds.txt', 'a')
-    f_r.write(str(r)+'\n')
+preds = open('preds.txt', 'w')
+for result in results:
+    preds.write(str(result)+'\n')
 
-f_r.close()
-f.close()
+preds.close()
 
-labels = db['label']
+TP, TN, FP, FN, c = 0, 0, 0, 0, 0
+for label in db['label']:
+    pred = results[c]
+    c += 1
 
-FP = 0
-FN = 0
-TP = 0
-TN = 0
-
-i = 0
-for l in labels: 
-    if results[i] == l:
-        if results[i] == 0: 
-            TN += 1
-        else: 
-            TP += 1
+    if pred == label: 
+        if pred == 0: TN += 1
+        else: TP += 1
     else: 
-        if results[i] == 0:
-            FN += 1
-        else: 
-            FP += 1
-    i += 1
-
-print(TP, TN, FP, FN)
+        if pred == 0: FN += 1
+        else: FP += 1
 
 Accuracy = (TP + TN) / (TN + TP + FP + FN)
 Precision = TP / (TP + FP)
 Recall = TP / (TP + FN)
 F1 = TP / (TP + ((FN + FP) / 2))
 
-print(Precision, Recall, F1)
-print(Accuracy)
+print('computed evaluation...')
+print('TP', TP)
+print('TN', TN)
+print('FP', FP)
+print('FN', FN)
+print('Accuracy', Accuracy)
+print('Precision', Precision)
+print('Recall', Recall)
+print('F1', F1)

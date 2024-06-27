@@ -57,16 +57,12 @@ for line in out:
 out.close()
 rule_types.sort()
 
-# create the notes-analysis file
-for rule_type in rule_types:
-    print(rule_type)
-
 with open('stats.json', 'w') as f:
     json.dump(files, f)
 
 idx_files = []
 valid_categories = ['error', 'portability', 'warning', 'style']
-not_valid_types = ['unusedFunction']
+not_valid_types = ['unusedFunction', 'unknownMacro', 'syntaxError']
 
 for file in files: 
 

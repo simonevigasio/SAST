@@ -1,0 +1,23 @@
+Flawfinder can report on the following CWEs (these are the CWEs that flawfinder covers; ‘‘*’’ marks those
+in the CWE/SANS top 25 list):
+• CWE-20: Improper Input Validation
+• CWE-22: Improper Limitation of a Pathname to a Restricted Directory (‘‘Path Traversal’’)
+• CWE-78: Improper Neutralization of Special Elements used in an OS Command (‘‘OS Command Injec-
+tion’’)*
+• CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer (a parent of
+CWE-120*, so this is shown as CWE-119!/CWE-120)
+• CWE-120: Buffer Copy without Checking Size of Input (‘‘Classic Buffer Overflow’’)*
+• CWE-126: Buffer Over-read
+• CWE-134: Uncontrolled Format String*
+• CWE-190: Integer Overflow or Wraparound*
+• CWE-250: Execution with Unnecessary Privileges
+• CWE-327: Use of a Broken or Risky Cryptographic Algorithm*
+• CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization (‘‘Race Condi-
+tion’’)
+• CWE-377: Insecure Temporary File
+• CWE-676: Use of Potentially Dangerous Function*
+• CWE-732: Incorrect Permission Assignment for Critical Resource*
+• CWE-785: Use of Path Manipulation Function without Maximum-sized Buffer (child of CWE-120*, so
+this is shown as CWE-120/CWE-785)
+• CWE-807: Reliance on Untrusted Inputs in a Security Decision*
+• CWE-829: Inclusion of Functionality from Untrusted Control Sphere*

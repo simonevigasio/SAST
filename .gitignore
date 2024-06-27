@@ -1,5 +1,4 @@
 .vscode/
 devign/labels
-devign/data
-reveal/labels
-reveal/data
+devign/data/
+reveal/data/
