@@ -1,19 +1,23 @@
+import pandas as pd
 import json
-import sys  
-sys.path.append('../assets')
 
-from database import db
+labels = []
+with open('diversevul.json', 'r') as f:
+    for line in f: 
+        data = json.loads(line)
+        if (data['cwe']!=[]) and (data['target']==1): 
+            labels.append(int(data['target']))
 
 print('dataset loaded...')
+
+out = open('output.txt', 'r')
 
 rule_types = []
 files = []
 
-out = open('output.txt', 'r')
-
 for line in out:    
 
-    if line[:5].startswith('data'):
+    if line[:6].startswith('data/'):
 
         file = { 'name': '', 'rules': [] }
 
@@ -22,7 +26,7 @@ for line in out:
             file['name'] += line[i]
             i += 1
 
-        i += 3
+        i += 5
         while line[i] != ':':
             i += 1
 
@@ -67,8 +71,8 @@ with open('stats.json', 'w') as f:
     json.dump(files, f)
 
 idx_files = []
-valid_categories = ['style']
-not_valid_types = []
+valid_categories = ['error', 'warning']
+not_valid_types = ['syntaxError']
 
 for file in files: 
 
@@ -94,7 +98,7 @@ idx_files.sort()
 
 print('vulnerable files found...')
 
-results = [0]*len(db)
+results = [0]*len(labels)
 
 for idx in idx_files:
     results[idx] = 1
@@ -106,7 +110,7 @@ for result in results:
 preds.close()
 
 TP, TN, FP, FN, c = 0, 0, 0, 0, 0
-for label in db.target:
+for label in labels:
     pred = results[c]
     c += 1
 

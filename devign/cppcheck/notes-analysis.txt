@@ -3,7 +3,6 @@ RULE                                    CWE                                     
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [unusedFunction]                        CWE-561: Dead Code (https://cwe.mitre.org/data/definitions/561.html)                                                                    style               
 [syntaxError]                           -                                                                                                                                       error               
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [arrayIndexOutOfBounds]                 CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer (https://cwe.mitre.org/data/definitions/119.html)      error
 [oppositeExpression]                    CWE CATEGORY: 7PK - Code Quality (https://cwe.mitre.org/data/definitions/398.html)                                                      style
 [ConfigurationNotChecked]               -                                                                                                                                       information

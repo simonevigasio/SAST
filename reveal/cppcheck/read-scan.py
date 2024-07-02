@@ -66,8 +66,8 @@ with open('stats.json', 'w') as f:
     json.dump(files, f)
 
 idx_files = []
-valid_categories = ['error', 'portability']
-not_valid_types = ['unusedFunction', 'unknownMacro', 'syntaxError']
+valid_categories = ['error', 'warning']
+not_valid_types = []
 
 for file in files: 
 

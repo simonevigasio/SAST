@@ -4,7 +4,6 @@ RULE                                    CWE                                     
 [unusedFunction]                        CWE-561: Dead Code (https://cwe.mitre.org/data/definitions/561.html)                                                                    style               
 [syntaxError]                           -                                                                                                                                       error    
 [unknownMacro]                          -                                                                                                                                       error         
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [shiftNegativeLHS]                      CWE-758: Reliance on Undefined, Unspecified, or Implementation-Defined Behavior (https://cwe.mitre.org/data/definitions/758.html)       portability
 [nullPointerRedundantCheck]             CWE-476: NULL Pointer Dereference (https://cwe.mitre.org/data/definitions/476.html)                                                     warning
 [invalidPrintfArgType_sint]             CWE-686: Function Call With Incorrect Argument Type (https://cwe.mitre.org/data/definitions/686.html)                                   portability
